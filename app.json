@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/category/category",
     "pages/goods_list/goods_list",
@@ -13,46 +13,44 @@
     "pages/login/logini",
     "pages/auth/auth",
     "pages/pay/pay"
-
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#eb4450",
     "navigationBarTitleText": "黑马优购",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "white"
   },
-  "tabBar":{
-    "color":"#999",
-    "selectedClor":"black",
-    "backgrounColor":"",
-    "positon":"bottom",
-    "borderStyle":"black",
-    "list":[
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#ff2d4a",
+    "backgroundColor": "#fafafa",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./icon/home.png",
+        "selectedIconPath": "./icon/home_active.png"
+      },
       {
-      "pagePath":"pages/index/index",
-      "text":"首页",
-      "iconPath":"./icon/home.png",
-      "selectedIconPath":"./icon/home_active.png"
-    },
-    {
-      "pagePath":"pages/index/index",
-      "text":"分类",
-      "iconPath":"./icon/category.png",
-      "selectedIconPath":"./icon/category_active.png"
-    },
-    {
-      "pagePath":"pages/index/index",
-      "text":"购物车",
-      "iconPath":"./icon/cart.png",
-      "selectedIconPath":"./icon/cart_active.png"
-    },
-    {
-      "pagePath":"pages/index/index",
-      "text":"我的",
-      "iconPath":"./icon/user.png",
-      "selectedIconPath":"./icon/user_active.png"
-    }
-  ]
+        "pagePath": "pages/index/index",
+        "text": "分类",
+        "iconPath": "./icon/category.png",
+        "selectedIconPath": "./icon/category_active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "购物车",
+        "iconPath": "./icon/cart.png",
+        "selectedIconPath": "./icon/cart_active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的",
+        "iconPath": "./icon/user.png",
+        "selectedIconPath": "./icon/user_active.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
