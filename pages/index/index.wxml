@@ -1,7 +1,13 @@
 <view class="pyg_index"><SearchInput></SearchInput></view>
 <view>
-11111<text class="iconfont icon-shoucang"></text>
+<view class="index_swiper">
+  <swiper  autoplay indicator-dots circular>
+    <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+     <navigator>
+       <image src="{{item.image_src}}" mode="widthFix"></image>
+     </navigator>
+    </swiper-item>
+  </swiper>
 </view>
-<view>
 11111<text class="iconfont icon-shoucang"></text>
 </view>
