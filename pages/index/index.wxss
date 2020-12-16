@@ -9,3 +9,14 @@ view {
   width: 100%;
   height: auto;
 }
+.index_cate {
+  display: flex;
+  padding: 10rpx;
+}
+.index_cate navigator {
+  flex: 1;
+}
+.index_cate navigator image {
+  justify-content: center;
+  width: 100%;
+}

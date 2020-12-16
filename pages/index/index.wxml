@@ -9,5 +9,10 @@
     </swiper-item>
   </swiper>
 </view>
+<view class="index_cate">
+ <navigator wx:for="{{cateList}}" wx:key="name">
+  <image src="{{item.image_src}}" mode="widthFix"></image>
+ </navigator>
+</view>
 11111<text class="iconfont icon-shoucang"></text>
 </view>
