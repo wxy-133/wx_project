@@ -4,7 +4,8 @@ Page({
   data: {
     //轮播图数组
     swiperList: [],
-    cateList:[]
+    cateList:[],
+    floorList:[]
 
   },
   //options(Object)
@@ -12,6 +13,7 @@ Page({
     //发送异步请求
     this.getSwiperList();
     this.getCateList();
+    this.getFloorList();
 
   },
   getSwiperList() {
@@ -27,6 +29,14 @@ Page({
     .then(result=>{
       this.setData({
         cateList:result.data.message
+      })
+    })
+  },
+  getFloorList(){
+    request({url:'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata'})
+    .then(result=>{
+      this.setData({
+        floorList:result.data.message
       })
     })
   }
