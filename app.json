@@ -33,19 +33,19 @@
         "selectedIconPath": "./icon/home_active.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/category/category",
         "text": "分类",
         "iconPath": "./icon/category.png",
         "selectedIconPath": "./icon/category_active.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/cart/cart",
         "text": "购物车",
         "iconPath": "./icon/cart.png",
         "selectedIconPath": "./icon/cart_active.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "./icon/user.png",
         "selectedIconPath": "./icon/user_active.png"
