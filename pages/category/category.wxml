@@ -6,7 +6,7 @@
 <scroll-view class="left_menu" scroll-y>
   <view class="menu_item {{index===currentIndex?'active':''}}" wx:for="{{leftMenuList}}" wx:key="*this" bindtap="handleItemTab" data-index="{{index}}">{{item}}</view>
 </scroll-view>
-<scroll-view class="right_contaion" scroll-y>
+<scroll-view class="right_contaion" scroll-top="{{scrollTop}}" scroll-y>
  <view class="goods_group" 
  wx:for="{{rightMenuList}}" 
  wx:for-index="index1" 
