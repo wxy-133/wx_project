@@ -34,18 +34,29 @@ Page({
       }
     }
   },
-  getCates  () {
-    request({url:'https://api-hmugo-web.itheima.net/api/public/v1/categories'})
-    .then(result=>{
-        this.Cates=result.data.message;
-        wx.setStorageSync("cates",{time:Date.now(),data:this.Cates});
-        let leftMenuList=this.Cates.map(v=>v.cat_name);
-        let rightMenuList=this.Cates[0].children;
-        this.setData({
-          leftMenuList,
-          rightMenuList
-        })
+
+  async getCates  () {
+    const result=await request({url:'/categories'});
+    this.Cates=result.data.message;
+    // this.Cates=result;
+    wx.setStorageSync("cates",{time:Date.now(),data:this.Cates});
+    let leftMenuList=this.Cates.map(v=>v.cat_name);
+    let rightMenuList=this.Cates[0].children;
+    this.setData({
+      leftMenuList,
+      rightMenuList
     })
+    // request({url:'/categories'})
+    // .then(result=>{
+    //     this.Cates=result.data.message;
+    //     wx.setStorageSync("cates",{time:Date.now(),data:this.Cates});
+    //     let leftMenuList=this.Cates.map(v=>v.cat_name);
+    //     let rightMenuList=this.Cates[0].children;
+    //     this.setData({
+    //       leftMenuList,
+    //       rightMenuList
+    //     })
+    // })
   },
   handleItemTab(e){
    const {index}=e.currentTarget.dataset;

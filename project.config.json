@@ -6,7 +6,7 @@
   "setting": {
     "urlCheck": false,
     "es6": true,
-    "enhance": false,
+    "enhance": true,
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
@@ -71,6 +71,13 @@
         {
           "name": "pages/category/category",
           "pathName": "pages/category/category",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/goods_list/goods_list",
+          "pathName": "pages/goods_list/goods_list",
+          "query": "cid=5",
           "scene": null
         }
       ]
