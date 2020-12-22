@@ -49,11 +49,11 @@ Page({
     const total = result.total;
     this.totalPages=Math.ceil(total/this.QueryParams.pagesize);
     // console.log(this.totalPages)
-
     //  console.log(result)
     this.setData({
       goodsList:[...this.data.goodsList,...result.goods]
     })
+    wx.stopPullDownRefresh();
   },
   handelTabsItemChange(e) {
     // console.log(e)
@@ -78,5 +78,12 @@ Page({
       this.QueryParams.pagenum++;
       this.getGOodsList();
     }
+  },
+  onPullDownRefresh(){
+    this.setData({
+      goodsList:[]
+    })
+    this.QueryParams.pagenum=1;
+    this.getGOodsList();
   }
 })
