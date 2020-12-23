@@ -79,6 +79,12 @@
           "pathName": "pages/goods_list/goods_list",
           "query": "cid=5",
           "scene": null
+        },
+        {
+          "name": "pages/goodes_detail/goods+detail",
+          "pathName": "pages/goodes_detail/goods+detail",
+          "query": "goods_id= 43986",
+          "scene": null
         }
       ]
     }
