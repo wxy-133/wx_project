@@ -24,7 +24,7 @@ GoodsInfo:{
  const goodsObj= res.data.message;
  this.GoodsInfo= res.data.message;
 //  console.log(goodsObj)
- this.setData({
+this.setData({
    goodsObj:{
      goods_name:goodsObj.goods_name,
      goods_price:goodsObj.goods_price,
@@ -35,12 +35,28 @@ GoodsInfo:{
    }
  })
  },
- handlePrevImage(e){
+handlePrevImage(e){
    const urls=this.GoodsInfo.pics.map(v=>v.pics_mid);
    const current=e.currentTarget.dataset.url;
    wx.previewImage({
      current:current,
      urls: urls,
+   })
+ },
+handleCartAdd(){
+   let cart=wx.getStorageSync('cart')||[];
+   let index=cart.findIndex(v=>v.goods_id===this.GoodsInfo.goods_id);
+   if(index===-1){
+      this.GoodsInfo.num=1;
+      cart.push(this.GoodsInfo);
+   }else{
+      cart[index].num++;
+   }
+   wx.setStorageSync('cart', cart)
+   wx.showToast({
+     title: '加入成功',
+     icon:'success',
+     mask:true
    })
  }
 })
