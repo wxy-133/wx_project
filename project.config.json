@@ -84,6 +84,12 @@
           "pathName": "pages/goodes_detail/goods+detail",
           "query": "goods_id= 43986",
           "scene": null
+        },
+        {
+          "name": "pages/cart/cart",
+          "pathName": "pages/cart/cart",
+          "query": "",
+          "scene": null
         }
       ]
     }
