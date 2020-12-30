@@ -12,14 +12,33 @@ Page({
   data: {
       address:{},
       cart:[],
+      allChecked:false,
+      totalPrice:0,
+      totalNum:0
   },
   onLoad: function (options) { },
   onShow(){
      const address=wx.getStorageSync('address');
-     const cart=wx.getStorageSync('cart');
+     const cart=wx.getStorageSync('cart')||[];
+    //  const allChecked=cart.length?cart.every(v=>v.check):false;
+     let totalPrice=0;
+     let totalNum=0;
+     let allChecked=true;
+     cart.forEach(v=>{
+       if(v.check){
+         totalPrice+=v.num*v.goods_price;
+         totalNum+=v.num;
+       }else{
+        allChecked=false;
+       }
+     })
+     allChecked=cart.length!=0?allChecked:false;
      this.setData({
        address,
-       cart
+       cart,
+       allChecked,
+       totalPrice,
+       totalNum
      });
   },
   async handleChooseAddress() {
