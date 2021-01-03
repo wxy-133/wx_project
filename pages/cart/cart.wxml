@@ -15,7 +15,7 @@
  <view class="cart_main">
   <view class="cart_item" wx:for="{{cart}}" for:key="goods_id">
     <view class="cart_chk_wrap">
-     <checkbox-group bindchange="">
+     <checkbox-group  data-id="{{item.goods_id}}" bindchange="handleItemChange">
      <checkbox checked="{{item.check}}"></checkbox>
      </checkbox-group>
     </view>
@@ -37,10 +37,10 @@
  </view>
 </view>
 <view class="foot_tool">
-  <view class="all_chk_wrap">
-    <checkbox-group bindchange="">
-      <checkbox checked="{{allChecked}}">
-       全选
+<view class="all_chk_wrap">
+<checkbox-group bindchange="handleItemAllCheck">
+<checkbox checked="{{allChecked}}">
+全选
       </checkbox>
     </checkbox-group>
   </view>

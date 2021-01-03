@@ -21,25 +21,10 @@ Page({
      const address=wx.getStorageSync('address');
      const cart=wx.getStorageSync('cart')||[];
     //  const allChecked=cart.length?cart.every(v=>v.check):false;
-     let totalPrice=0;
-     let totalNum=0;
-     let allChecked=true;
-     cart.forEach(v=>{
-       if(v.check){
-         totalPrice+=v.num*v.goods_price;
-         totalNum+=v.num;
-       }else{
-        allChecked=false;
-       }
-     })
-     allChecked=cart.length!=0?allChecked:false;
-     this.setData({
-       address,
-       cart,
-       allChecked,
-       totalPrice,
-       totalNum
-     });
+    this.setData({
+      address
+    });
+    this.setCart(cart);
   },
   async handleChooseAddress() {
     try {
@@ -53,5 +38,41 @@ Page({
     } catch (error) {
       console.log(error)
     }
+  },
+  handleItemChange(e){
+   const goods_id=e.currentTarget.dataset.id;
+  //  console.log(goods_id)
+  let {cart}=this.data;
+  let index=cart.findIndex(v=>v.goods_id===goods_id);
+  cart[index].check=!cart[index].check;
+  this.setCart(cart);
+  },
+  //设置购物车状态，重新计算底部工具栏数据
+  setCart(cart){
+    let totalPrice=0;
+    let totalNum=0;
+    let allChecked=true;
+    cart.forEach(v=>{
+      if(v.check){
+        totalPrice+=v.num*v.goods_price;
+        totalNum+=v.num;
+      }else{
+       allChecked=false;
+      }
+    })
+    allChecked=cart.length!=0?allChecked:false;
+    this.setData({
+      cart,
+      totalPrice,
+      totalNum,
+      allChecked
+    });
+    wx.setStorageSync("cart", cart);
+  },
+  handleItemAllCheck(){
+    let {cart,allChecked}=this.data;
+    allChecked=!allChecked;
+    cart.forEach(v=>v.check=allChecked);
+    this.setCart(cart);
   }
 })
