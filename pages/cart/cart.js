@@ -74,5 +74,13 @@ Page({
     allChecked=!allChecked;
     cart.forEach(v=>v.check=allChecked);
     this.setCart(cart);
+  },
+  handleItemNumEdit(e){
+    const {operation,id}=e.currentTarget.dataset;
+    // console.log(operation)
+    let {cart}=this.data;
+    const index=cart.findIndex(v=>v.goods_id===id);
+    cart[index].num+=operation;
+    this.setCart(cart);
   }
 })
