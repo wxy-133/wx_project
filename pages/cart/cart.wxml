@@ -55,7 +55,7 @@
     <view class="total_price">合计：<text class="total_price_text">￥{{totalPrice}}</text></view>
     <view>包含运费</view>
   </view>
-  <view class="order_pay_wrap">
+  <view class="order_pay_wrap" bindtap="handlePlay">
     结算（{{totalNum}}
   </view>
 </view>

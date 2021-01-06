@@ -35,6 +35,19 @@ export const openSetting = () => {
     })
   })
 }
+export const showToast = ({title}) => {
+  return new Promise((resolve, reject) => {
+    wx.showToast({
+      title:title,
+      success: (result) => {
+        resolve(result)
+      },
+      fail: () => {
+        reject(err);
+      }
+    })
+  })
+}
 // async handleChooseAddress() {
 //   const res1 = await getSetting();
 //   const scopeAddress = res1.authSetting["scope.address"];

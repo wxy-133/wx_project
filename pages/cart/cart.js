@@ -2,7 +2,8 @@
 import {
   getSetting,
   chooseAddress,
-  openSetting
+  openSetting,
+  showToast
 } from '../../utils/asncWx'
 Page({
 
@@ -82,5 +83,19 @@ Page({
     const index=cart.findIndex(v=>v.goods_id===id);
     cart[index].num+=operation;
     this.setCart(cart);
+  },
+   async handlePlay(){
+    const {address,totalNum}=this.data;
+    if(!address.userName){
+     await showToast({title:'您还没有选择收货地址'})
+      return;
+    }
+    if(totalNum===0){
+      await showToast({title:'您还没有选择商品'})
+      return;
+    }
+    wx.navigateTo({
+      url: '/pages/pay/pay'
+    })
   }
 })
