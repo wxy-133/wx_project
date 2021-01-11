@@ -1,1 +1,125 @@
 /* pages/user/user.wxss */
+page{
+  background-color: #edece8;
+}
+.user_info_wrap{
+height: 45vh;
+overflow: hidden;
+background-color: var(--themeColor);
+position: relative;
+}
+.user_info_wrap .user_img-wrap{
+  width: auto;
+  position: relative;
+}
+.user_info_wrap .user_img-wrap .user-bg{
+  height: 50vh;
+  filter: blur(10rpx);
+}
+.user_info_wrap .user_img-wrap .user_info{
+  position: absolute;
+  left: 50%;
+  top:20%;
+  transform:translateX(-50%);
+  text-align: center;
+}
+.user_info_wrap .user_img-wrap .user_info .user_icon{
+    width: 150rpx;
+    height: 150rpx;
+    border-radius: 50%;
+}
+.user_info_wrap .user_img-wrap  .user_info .user_name{
+   color: white;
+  margin-top: 40rpx;
+  font-size: 40rpx;
+
+}
+.user_btn{
+  position: absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top: 40%;
+  border: 1rpx solid greenyellow;
+  color:greenyellow;
+  font-size: 38rpx;
+  padding: 30rpx;
+  border-radius: 10rpx;
+}
+.user_content{
+  width: auto;
+  position: relative;
+}
+.user_content .user_main{
+  color:#666;
+   position: absolute;
+   width: 90%;
+   left:50%;
+   transform: translateX(-50%);
+   top:-30rpx;
+   padding-bottom: 100rpx;
+}
+.user_content .user_main .history_wrap {
+  background-color: white;
+  display: flex;
+}
+.user_content .user_main .history_wrap navigator{
+   flex: 1;
+   text-align: center;
+   padding: 10rpx 0;
+}
+.user_content .user_main .history_wrap .his_num{
+   color: var(--themeColor);
+}
+.user_content .user_main .history_wrap .his_name{
+  color: var(--themeColor);
+}
+.user_content .user_main .orders_wrap {
+  background-color: white;
+  margin-top: 30rpx;
+}
+.user_content .user_main .orders_wrap .orders_title{
+width: auto;
+padding: 20rpx;
+border-bottom: 1px solid #ccc;
+}
+.user_content .user_main .orders_wrap .orders_content {
+  display: flex;
+}
+.user_content .user_main .orders_wrap .orders_content navigator{
+   flex: 1;
+   text-align: center;
+   padding: 15rpx 0;
+
+}
+.user_content .user_main .orders_wrap .orders_content  .iconfont{
+  width: auto;
+  color: var(--themeColor);
+}
+.user_content .user_main .orders_wrap .orders_content  .order_name{
+  color: var(--themeColor);
+}
+.user_content .user_main .address_wrap{
+  width: auto;
+  margin-top: 30rpx;
+  background-color: white;
+  padding: 20rpx;
+}
+.user_content .user_main  .app_info_wrap{
+  width: auto; 
+  margin-top: 30rpx;
+  background-color: white;
+}
+.user_content .user_main  .app_info_wrap  .app_info_item{
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.user_content .user_main  .app_info_wrap  .app_info_item.contact{
+  display: flex;
+  justify-content: space-between;
+}
+.user_content .user_main .recommend_wrap{
+  width: auto; 
+  margin-top: 30rpx;
+  background-color: white;
+  padding:20rpx;
+}
