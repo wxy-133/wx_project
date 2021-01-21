@@ -120,6 +120,11 @@
           "pathName": "pages/search/search",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/faceback/faceback",
+          "pathName": "pages/faceback/faceback",
+          "scene": null
         }
       ]
     }

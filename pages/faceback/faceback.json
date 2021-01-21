@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "Tabs":"../../components/Tabs/Tabs",
+      "Uping":"../../components/Uping/Uping"
+  },
+  "navigationBarTitleText":"意见反馈",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
 }
